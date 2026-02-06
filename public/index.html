@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-trophy"></i> Sports Management System</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" data-section="registration"><i class="fas fa-user-plus"></i> Registration</a>
+                <a href="#" class="nav-link" data-section="login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="#" class="nav-link" data-section="admin"><i class="fas fa-user-tie"></i> Admin</a>
+                <a href="#" class="nav-link" data-section="player"><i class="fas fa-user"></i> Player</a>
+                <a href="#" class="nav-link" data-section="coach"><i class="fas fa-clipboard-list"></i> Coach</a>
+                <a href="#" class="nav-link" data-section="sports"><i class="fas fa-futbol"></i> Sports</a>
+                <a href="#" class="nav-link" data-section="fixtures"><i class="fas fa-calendar-alt"></i> Fixtures</a>
+                <a href="#" class="nav-link" data-section="results"><i class="fas fa-medal"></i> Results</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <h2>Welcome to Sports Management System</h2>
+            <p>Comprehensive platform for managing all sports activities</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3 id="totalUsers">2</h3>
+                    <p>Total Users</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalSports">12</h3>
+                    <p>Sports Categories</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalFixtures">2</h3>
+                    <p>Upcoming Matches</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalResults">2</h3>
+                    <p>Matches Played</p>
+                </div>
+            </div>
+
+            <h2>Sports Gallery</h2>
+            <div class="sports-gallery" id="sportsGallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&h=400&fit=crop" alt="Sports Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=800&h=400&fit=crop" alt="Sports Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=800&h=400&fit=crop" alt="Sports Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&h=400&fit=crop" alt="Sports Image 4">
+                </div>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3><i class="fas fa-users"></i> Player Management</h3>
+                    <p>Register, track, and manage player profiles, performance, and statistics</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-clipboard-check"></i> Coach Dashboard</h3>
+                    <p>Manage teams, training schedules, and player development programs</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-calendar-check"></i> Match Scheduling</h3>
+                    <p>Create and manage fixtures, venues, and match timings efficiently</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-chart-line"></i> Analytics & Results</h3>
+                    <p>Track match results and performance analytics for all sports</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTRATION SECTION -->
+        <section id="registration" class="section">
+            <h2><i class="fas fa-user-plus"></i> Registration Module</h2>
+            <div class="form-container">
+                <form id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user-tag"></i> Register As</label>
+                            <select class="form-control" id="regRole" required>
+                                <option value="">Select Role</option>
+                                <option value="player">Player</option>
+                                <option value="coach">Coach</option>
+                                <option value="admin">Administrator</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-birthday-cake"></i> Age</label>
+                            <input type="number" class="form-control" id="age" min="10" max="70" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Preferred Sport</label>
+                        <select class="form-control" id="sport" required>
+                            <option value="">Select Sport</option>
+                            <option>Football</option>
+                            <option>Cricket</option>
+                            <option>Hockey</option>
+                            <option>Volleyball</option>
+                            <option>Badminton</option>
+                            <option>Cycling</option>
+                            <option>Baseball</option>
+                            <option>Swimming</option>
+                            <option>Chess</option>
+                            <option>Yoga</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Register</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- LOGIN SECTION -->
+        <section id="login" class="section">
+            <h2><i class="fas fa-sign-in-alt"></i> Login Module</h2>
+            <div class="auth-box">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Username/Email</label>
+                        <input type="text" class="form-control" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-key"></i> Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> <i class="fas fa-memory"></i> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem;">
+                    Don't have an account? <a href="#" onclick="showSection('registration'); return false;" class="nav-link">Register here</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ADMIN SECTION -->
+        <section id="admin" class="section">
+            <h2><i class="fas fa-user-tie"></i> Admin Dashboard</h2>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3 id="adminTotalUsers">2</h3>
+                    <p>Total Users</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminTotalSports">12</h3>
+                    <p>Sports Categories</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminTotalFixtures">2</h3>
+                    <p>Upcoming Fixtures</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminTotalResults">2</h3>
+                    <p>Matches Played</p>
+                </div>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <button class="btn btn-primary" onclick="openModal('addUserModal')"><i class="fas fa-user-plus"></i> Add User</button>
+                <button class="btn btn-secondary" onclick="openModal('addSportModal')"><i class="fas fa-futbol"></i> Add Sport</button>
+                <button class="btn btn-success" onclick="openModal('addFixtureModal')"><i class="fas fa-calendar-plus"></i> Schedule Match</button>
+                <button class="btn btn-warning" onclick="generateReport()"><i class="fas fa-chart-bar"></i> Generate Report</button>
+            </div>
+
+            <h3>User Management</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Sport</th>
+                        <th>Team</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTable">
+                    <!-- Dynamic content will be inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PLAYER SECTION -->
+        <section id="player" class="section">
+            <h2><i class="fas fa-user"></i> Player Dashboard</h2>
+            
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3><i class="fas fa-id-card"></i> Player Profile</h3>
+                    <p><strong>Name:</strong> <span id="playerName">John Smith</span></p>
+                    <p><strong>Sport:</strong> <span id="playerSport">Football</span></p>
+                    <p><strong>Team:</strong> <span id="playerTeam">Team A</span></p>
+                    <p><strong>Position:</strong> <span id="playerPosition">Forward</span></p>
+                    <button class="btn btn-primary" onclick="openModal('editPlayerModal')" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-chart-line"></i> Performance Stats</h3>
+                    <p><strong>Matches Played:</strong> <span id="matchesPlayed">15</span></p>
+                    <p><strong>Goals Scored:</strong> <span id="goalsScored">12</span></p>
+                    <p><strong>Assists:</strong> <span id="assists">8</span></p>
+                    <p><strong>Win Rate:</strong> <span id="winRate">73%</span></p>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-calendar"></i> Upcoming Matches</h3>
+                    <div id="playerUpcomingMatches">
+                        <!-- Dynamic content -->
+                    </div>
+                    <button class="btn btn-secondary" onclick="showSection('fixtures'); return false;" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-calendar-alt"></i> View Full Schedule
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                    <div id="playerAchievements">
+                        <!-- Dynamic content -->
+                    </div>
+                    <button class="btn btn-success" onclick="showSection('results'); return false;" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-chart-bar"></i> View Full Stats
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- COACH SECTION -->
+        <section id="coach" class="section">
+            <h2><i class="fas fa-clipboard-list"></i> Coach Dashboard</h2>
+            
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3><i class="fas fa-users"></i> Team Management</h3>
+                    <p><strong>Total Players:</strong> <span id="totalPlayers">24</span></p>
+                    <p><strong>Active Players:</strong> <span id="activePlayers">22</span></p>
+                    <p><strong>Injured Players:</strong> <span id="injuredPlayers">2</span></p>
+                    <p><strong>Team Rating:</strong> <span id="teamRating">8.7/10</span></p>
+                    <button class="btn btn-primary" onclick="openModal('manageTeamModal')" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-users-cog"></i> Manage Team
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-running"></i> Training Schedule</h3>
+                    <div id="coachTrainingSchedule">
+                        <!-- Dynamic content -->
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('addTrainingModal')" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-plus-circle"></i> Add Training
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-chart-bar"></i> Team Performance</h3>
+                    <p><strong>Matches Won:</strong> <span id="matchesWon">11</span></p>
+                    <p><strong>Matches Lost:</strong> <span id="matchesLost">4</span></p>
+                    <p><strong>Goals For:</strong> <span id="goalsFor">35</span></p>
+                    <p><strong>Goals Against:</strong> <span id="goalsAgainst">18</span></p>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    <button class="btn btn-primary" onclick="openModal('selectLineupModal')" style="width: 100%; margin-bottom: 0.5rem;">
+                        <i class="fas fa-users"></i> Select Lineup
+                    </button>
+                    <button class="btn btn-secondary" onclick="openModal('addStrategyModal')" style="width: 100%; margin-bottom: 0.5rem;">
+                        <i class="fas fa-chess"></i> Add Strategy
+                    </button>
+                    <button class="btn btn-success" onclick="openModal('playerAssessmentModal')" style="width: 100%; margin-bottom: 0.5rem;">
+                        <i class="fas fa-clipboard-check"></i> Player Assessment
+                    </button>
+                    <button class="btn btn-warning" onclick="generateCoachReport()" style="width: 100%;">
+                        <i class="fas fa-file-alt"></i> Generate Team Report
+                    </button>
+                </div>
+            </div>
+
+            <h3>Player Roster</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Position</th>
+                        <th>Fitness</th>
+                        <th>Performance</th>
+                        <th>Last Match</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="coachPlayersTable">
+                    <!-- Dynamic content -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SPORTS SECTION -->
+        <section id="sports" class="section">
+            <h2><i class="fas fa-futbol"></i> Sports Categories</h2>
+            
+            <div style="margin: 1rem 0;">
+                <button class="btn btn-primary" onclick="filterSports('all')"><i class="fas fa-globe"></i> All Sports</button>
+                <button class="btn btn-secondary" onclick="filterSports('outdoor')"><i class="fas fa-sun"></i> Outdoor</button>
+                <button class="btn btn-success" onclick="filterSports('indoor')"><i class="fas fa-home"></i> Indoor</button>
+                <button class="btn btn-warning" onclick="openModal('addSportModal')"><i class="fas fa-plus-circle"></i> Add Sport</button>
+            </div>
+
+            <!-- Sports Icons Gallery -->
+            <div class="sports-icons-gallery" id="sportsCategories">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </section>
+
+        <!-- FIXTURES SECTION -->
+        <section id="fixtures" class="section">
+            <h2><i class="fas fa-calendar-alt"></i> Fixtures Module</h2>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                <h3>Upcoming Matches</h3>
+                <button class="btn btn-primary" onclick="openModal('addFixtureModal')"><i class="fas fa-plus-circle"></i> Schedule Match</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Sport</th>
+                        <th>Teams</th>
+                        <th>Venue</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="fixturesTable">
+                    <!-- Dynamic content -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- RESULTS SECTION -->
+        <section id="results" class="section">
+            <h2><i class="fas fa-medal"></i> Results Module</h2>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                <h3>Match Results</h3>
+                <button class="btn btn-primary" onclick="openModal('addResultModal')"><i class="fas fa-plus-circle"></i> Add Result</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Sport</th>
+                        <th>Teams</th>
+                        <th>Score</th>
+                        <th>Winner</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <!-- Dynamic content -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- ALL MODALS -->
+    <!-- PLAYER MODAL -->
+    <div id="editPlayerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Edit Player Profile</h3>
+                <button class="close-modal" onclick="closeModal('editPlayerModal')">×</button>
+            </div>
+            <form id="editPlayerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" class="form-control" id="editPlayerName" value="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Position</label>
+                        <select class="form-control" id="editPlayerPosition" required>
+                            <option value="forward" selected>Forward</option>
+                            <option value="midfielder">Midfielder</option>
+                            <option value="defender">Defender</option>
+                            <option value="goalkeeper">Goalkeeper</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-tshirt"></i> Jersey Number</label>
+                        <input type="number" class="form-control" id="editJerseyNumber" value="10" min="1" max="99" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-ruler-vertical"></i> Height (cm)</label>
+                        <input type="number" class="form-control" id="editHeight" value="180" min="150" max="220" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-weight"></i> Weight (kg)</label>
+                        <input type="number" class="form-control" id="editWeight" value="75" min="50" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Experience (years)</label>
+                        <input type="number" class="form-control" id="editExperience" value="5" min="0" max="30" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- COACH MODALS -->
+    <div id="manageTeamModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-users-cog"></i> Manage Team</h3>
+                <button class="close-modal" onclick="closeModal('manageTeamModal')">×</button>
+            </div>
+            <form id="manageTeamForm">
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Team Name</label>
+                    <input type="text" class="form-control" id="teamName" value="Team A" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-crown"></i> Team Captain</label>
+                        <input type="text" class="form-control" id="teamCaptain" placeholder="Type captain name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-star"></i> Vice Captain</label>
+                        <input type="text" class="form-control" id="teamViceCaptain" placeholder="Type vice captain name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-chess"></i> Team Strategy</label>
+                    <textarea class="form-control" id="teamStrategy" rows="3">Focus on possession and quick counter-attacks. Maintain defensive discipline.</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Team</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addTrainingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Add Training Session</h3>
+                <button class="close-modal" onclick="closeModal('addTrainingModal')">×</button>
+            </div>
+            <form id="addTrainingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> Date</label>
+                        <input type="date" class="form-control" id="trainingDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-clock"></i> Time</label>
+                        <input type="time" class="form-control" id="trainingTime" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-running"></i> Training Type</label>
+                        <select class="form-control" id="trainingType" required>
+                            <option value="fitness">Fitness</option>
+                            <option value="tactical">Tactical</option>
+                            <option value="technical">Technical</option>
+                            <option value="recovery">Recovery</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-hourglass-half"></i> Duration (hours)</label>
+                        <input type="number" class="form-control" id="trainingDuration" min="0.5" max="4" step="0.5" value="2" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-bullseye"></i> Focus Areas</label>
+                    <textarea class="form-control" id="trainingFocus" rows="3" placeholder="e.g., Passing, Shooting, Defensive positioning..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Schedule Training</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN MODALS -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add New User</h3>
+                <button class="close-modal" onclick="closeModal('addUserModal')">×</button>
+            </div>
+            <form id="addUserForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" class="form-control" id="newUserName" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-user-tag"></i> Role</label>
+                        <select class="form-control" id="newUserRole" required>
+                            <option value="player">Player</option>
+                            <option value="coach">Coach</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" class="form-control" id="newUserEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Sport</label>
+                        <select class="form-control" id="newUserSport" required>
+                            <option>Football</option>
+                            <option>Cricket</option>
+                            <option>Hockey</option>
+                            <option>Volleyball</option>
+                            <option>Badminton</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Team</label>
+                    <input type="text" class="form-control" id="newUserTeam" placeholder="Enter team name">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add User</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addSportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-futbol"></i> Add New Sport</h3>
+                <button class="close-modal" onclick="closeModal('addSportModal')">×</button>
+            </div>
+            <form id="addSportForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Sport Name</label>
+                        <input type="text" class="form-control" id="newSportName" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> Category</label>
+                        <select class="form-control" id="newSportCategory" required>
+                            <option value="outdoor">Outdoor</option>
+                            <option value="indoor">Indoor</option>
+                            <option value="water">Water Sports</option>
+                            <option value="winter">Winter Sports</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-file-alt"></i> Description</label>
+                    <textarea class="form-control" id="newSportDescription" rows="3" placeholder="Brief description of the sport"></textarea>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Minimum Players</label>
+                    <input type="number" class="form-control" id="newSportMinPlayers" min="1" max="50" value="2">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Sport</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addFixtureModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-calendar-plus"></i> Schedule New Match</h3>
+                <button class="close-modal" onclick="closeModal('addFixtureModal')">×</button>
+            </div>
+            <form id="addFixtureForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Sport</label>
+                        <select class="form-control" id="fixtureSport" required>
+                            <option>Football</option>
+                            <option>Cricket</option>
+                            <option>Hockey</option>
+                            <option>Volleyball</option>
+                            <option>Badminton</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> Date</label>
+                        <input type="date" class="form-control" id="fixtureDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-users"></i> Team 1</label>
+                        <input type="text" class="form-control" id="fixtureTeam1" placeholder="Enter team name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-users"></i> Team 2</label>
+                        <input type="text" class="form-control" id="fixtureTeam2" placeholder="Enter team name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Venue</label>
+                        <input type="text" class="form-control" id="fixtureVenue" placeholder="Enter venue" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-clock"></i> Time</label>
+                        <input type="time" class="form-control" id="fixtureTime" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Schedule Match</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addResultModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Add Match Result</h3>
+                <button class="close-modal" onclick="closeModal('addResultModal')">×</button>
+            </div>
+            <form id="addResultForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Sport</label>
+                        <select class="form-control" id="resultSport" required>
+                            <option>Football</option>
+                            <option>Cricket</option>
+                            <option>Hockey</option>
+                            <option>Volleyball</option>
+                            <option>Badminton</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> Date</label>
+                        <input type="date" class="form-control" id="resultDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-users"></i> Team 1</label>
+                        <input type="text" class="form-control" id="resultTeam1" placeholder="Enter team name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-users"></i> Team 2</label>
+                        <input type="text" class="form-control" id="resultTeam2" placeholder="Enter team name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Score (Team 1)</label>
+                        <input type="number" class="form-control" id="resultScore1" min="0" value="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-futbol"></i> Score (Team 2)</label>
+                        <input type="number" class="form-control" id="resultScore2" min="0" value="0" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Add Result</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- COACH SPECIFIC MODALS -->
+    <div id="playerAssessmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-clipboard-check"></i> Player Assessment</h3>
+                <button class="close-modal" onclick="closeModal('playerAssessmentModal')">×</button>
+            </div>
+            <form id="playerAssessmentForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Player Name</label>
+                    <select class="form-control" id="assessmentPlayer" required>
+                        <option>John Smith</option>
+                        <option>Mike Johnson</option>
+                        <option>Sarah Wilson</option>
+                        <option>David Brown</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-cogs"></i> Technical Skills (1-10)</label>
+                        <input type="number" class="form-control" id="technicalSkills" min="1" max="10" value="8">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-chess"></i> Tactical Awareness (1-10)</label>
+                        <input type="number" class="form-control" id="tacticalAwareness" min="1" max="10" value="7">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-dumbbell"></i> Physical Fitness (1-10)</label>
+                        <input type="number" class="form-control" id="physicalFitness" min="1" max="10" value="9">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-brain"></i> Mental Strength (1-10)</label>
+                        <input type="number" class="form-control" id="mentalStrength" min="1" max="10" value="8">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-sticky-note"></i> Assessment Notes</label>
+                    <textarea class="form-control" id="assessmentNotes" rows="3" placeholder="Enter assessment notes..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="selectLineupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-users"></i> Select Team Lineup</h3>
+                <button class="close-modal" onclick="closeModal('selectLineupModal')">×</button>
+            </div>
+            <form id="selectLineupForm">
+                <div class="form-group">
+                    <label><i class="fas fa-calendar"></i> Match</label>
+                    <select class="form-control" id="lineupMatch" required>
+                        <option>Team A vs Team B (May 10, 14:00)</option>
+                        <option>Team A vs Team C (May 15, 16:00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-chess-board"></i> Formation</label>
+                    <select class="form-control" id="lineupFormation" required>
+                        <option>4-4-2</option>
+                        <option>4-3-3</option>
+                        <option>3-5-2</option>
+                        <option>4-2-3-1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Starting Players (Select 11)</label>
+                    <select class="form-control" id="lineupPlayers" multiple size="6" required>
+                        <option>John Smith (Forward)</option>
+                        <option>Mike Johnson (Midfielder)</option>
+                        <option>Sarah Wilson (Defender)</option>
+                        <option>David Brown (Goalkeeper)</option>
+                        <option>Robert Taylor (Forward)</option>
+                        <option>Emily Clark (Midfielder)</option>
+                    </select>
+                    <small>Hold Ctrl/Cmd to select multiple players</small>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Set Lineup</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addStrategyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-chess"></i> Add Team Strategy</h3>
+                <button class="close-modal" onclick="closeModal('addStrategyModal')">×</button>
+            </div>
+            <form id="addStrategyForm">
+                <div class="form-group">
+                    <label><i class="fas fa-chess"></i> Strategy Name</label>
+                    <input type="text" class="form-control" id="strategyName" placeholder="e.g., Counter Attack, High Press" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar"></i> For Match</label>
+                    <select class="form-control" id="strategyMatch">
+                        <option value="">All Matches</option>
+                        <option>Team A vs Team B (May 10)</option>
+                        <option>Team A vs Team C (May 15)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-file-alt"></i> Strategy Description</label>
+                    <textarea class="form-control" id="strategyDescription" rows="4" placeholder="Describe the strategy in detail..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-bullseye"></i> Focus Area</label>
+                        <select class="form-control" id="strategyFocus" required>
+                            <option>Attack</option>
+                            <option>Defense</option>
+                            <option>Transition</option>
+                            <option>Set Pieces</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-signal"></i> Difficulty Level</label>
+                        <select class="form-control" id="strategyDifficulty" required>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Strategy</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><i class="far fa-copyright"></i> 2024 Sports Management System | All Rights Reserved</p>
+        <p>Designed for comprehensive sports management</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
